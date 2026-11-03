@@ -199,21 +199,21 @@
       /* Avatar */
       .hero-avatar { perspective: 900px; }
       .avatar-card {
-        position: relative; width: min(340px, 72vw); aspect-ratio: 1;
-        border-radius: 28px; padding: 6px;
-        background: linear-gradient(140deg, var(--accent), var(--violet), transparent 70%);
-        box-shadow: 0 0 0 1px var(--line), 0 24px 70px rgba(139, 92, 246, 0.28);
+        position: relative; width: min(340px, 72vw);
+        filter: drop-shadow(0 0 34px rgba(139, 92, 246, 0.45));
         animation: avatarFloat 5.5s ease-in-out infinite;
         transition: transform 0.25s ease-out;
         will-change: transform;
+        touch-action: none;
       }
+      .avatar-card svg { display: block; width: 100%; height: auto; }
+      #avatar-head { transition: transform 0.35s ease-out; transform-origin: 200px 210px; }
+      .avatar-eye { transform-box: fill-box; transform-origin: center; transition: transform 0.12s ease; }
+      .avatar-eye.avatar-blink { transform: scaleY(0.08); }
+      .avatar-pupil { transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1); }
       @keyframes avatarFloat {
         0%, 100% { transform: translateY(0); }
         50% { transform: translateY(-12px); }
-      }
-      .avatar-card img {
-        display: block; width: 100%; height: 100%; object-fit: cover;
-        border-radius: 22px; background: #111;
       }
       .avatar-tag {
         position: absolute; left: 50%; bottom: -14px; transform: translateX(-50%);
@@ -565,7 +565,46 @@
             </div>
             <div class="hero-avatar">
               <div class="avatar-card" id="avatar-card">
-                <img src="avatar.webp" alt="Cartoon avatar of Astel William wearing sunglasses and a hoodie" />
+                <svg viewBox="0 0 400 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cartoon avatar of Astel William with moving eyes">
+  <path d="M60 440 L60 360 Q60 330 95 322 L130 312 L270 312 L305 322 Q340 330 340 360 L340 440 Z" fill="#191920"/>
+  <path d="M128 330 Q200 288 272 330 L272 352 Q200 318 128 352 Z" fill="#23232c"/>
+  <path d="M168 270 L168 322 Q200 338 232 322 L232 270 Z" fill="#c98d5f"/>
+  <path d="M168 270 L168 300 Q200 316 232 300 L232 270 Q200 288 168 270 Z" fill="#b57a4e"/>
+  <g id="avatar-head">
+    <ellipse cx="96" cy="212" rx="16" ry="22" fill="#c98d5f"/>
+    <ellipse cx="304" cy="212" rx="16" ry="22" fill="#c98d5f"/>
+    <path d="M112 150 Q112 96 200 96 Q288 96 288 150 L288 230 Q288 316 200 330 Q112 316 112 230 Z" fill="#cf9163"/>
+    <path d="M96 210 Q76 120 120 66 Q150 22 200 22 Q252 22 282 66 Q326 120 304 210 Q312 168 296 150 Q300 210 282 258 Q292 300 268 330 Q278 290 258 268 Q250 318 214 330 Q200 300 186 330 Q150 318 142 268 Q122 290 132 330 Q108 300 118 258 Q100 210 104 150 Q88 168 96 210 Z" fill="#141414"/>
+    <path d="M150 70 Q180 44 210 62" stroke="#2e2e2e" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M196 58 Q226 40 252 60" stroke="#2e2e2e" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M128 182 Q148 168 172 180" stroke="#141414" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <path d="M228 180 Q252 168 272 182" stroke="#141414" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <g class="avatar-eye" id="avatar-eyeL">
+      <ellipse cx="150" cy="208" rx="27" ry="20" fill="#ffffff"/>
+      <g class="avatar-pupil" id="avatar-pupilL">
+        <circle cx="150" cy="210" r="11" fill="#161616"/>
+        <circle cx="154" cy="206" r="3.5" fill="#ffffff"/>
+      </g>
+    </g>
+    <g class="avatar-eye" id="avatar-eyeR">
+      <ellipse cx="250" cy="208" rx="27" ry="20" fill="#ffffff"/>
+      <g class="avatar-pupil" id="avatar-pupilR">
+        <circle cx="250" cy="210" r="11" fill="#161616"/>
+        <circle cx="254" cy="206" r="3.5" fill="#ffffff"/>
+      </g>
+    </g>
+    <path d="M196 228 Q204 252 192 258" stroke="#b57a4e" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M168 272 Q184 262 200 272 Q216 262 232 272 Q224 284 200 282 Q176 284 168 272 Z" fill="#1c1c1c"/>
+    <path d="M172 292 Q200 310 228 292" stroke="#7a4a2e" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M124 232 Q124 310 200 330 Q276 310 276 232 Q276 300 200 318 Q124 300 124 232 Z" fill="#1c1c1c" opacity="0.92"/>
+    <path d="M150 318 Q200 336 250 318" stroke="#1c1c1c" stroke-width="10" fill="none" stroke-linecap="round"/>
+  </g>
+  <path d="M172 322 L166 372" stroke="#3a3a44" stroke-width="5" stroke-linecap="round"/>
+  <path d="M228 322 L234 372" stroke="#3a3a44" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="166" cy="378" r="5" fill="#3a3a44"/>
+  <circle cx="234" cy="378" r="5" fill="#3a3a44"/>
+  <path d="M200 330 L200 440" stroke="#26262c" stroke-width="4"/>
+</svg>
                 <span class="avatar-tag"><b>●</b> Open to work</span>
               </div>
             </div>
@@ -1156,6 +1195,41 @@
           })();
         }
       } catch (err) { /* starfield is decoration only; page works without it */ }
+    </script>
+    <script>
+      /* Avatar eyes: follow the pointer/finger, wander on idle, blink on their own. */
+      (function () {
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        var pupils = [document.getElementById("avatar-pupilL"), document.getElementById("avatar-pupilR")];
+        var eyes = [document.getElementById("avatar-eyeL"), document.getElementById("avatar-eyeR")];
+        var head = document.getElementById("avatar-head");
+        var stage = document.getElementById("avatar-card");
+        if (!pupils[0] || !stage) return;
+        var tx = 0, ty = 0, cx = 0, cy = 0, lastPointer = 0;
+        function setTarget(x, y) { tx = Math.max(-1, Math.min(1, x)); ty = Math.max(-1, Math.min(1, y)); }
+        stage.addEventListener("pointermove", function (e) {
+          var r = stage.getBoundingClientRect();
+          setTarget(((e.clientX - r.left) / r.width - 0.5) * 2, ((e.clientY - r.top) / r.height - 0.5) * 2);
+          lastPointer = Date.now();
+        });
+        setInterval(function () {
+          if (Date.now() - lastPointer > 2500) setTarget(Math.random() * 2 - 1, Math.random() * 1.4 - 0.7);
+        }, 2600);
+        function blink() {
+          eyes.forEach(function (el) { el.classList.add("avatar-blink"); });
+          setTimeout(function () { eyes.forEach(function (el) { el.classList.remove("avatar-blink"); }); }, 150);
+          setTimeout(blink, 2800 + Math.random() * 2800);
+        }
+        setTimeout(blink, 1800);
+        (function loop() {
+          cx += (tx - cx) * 0.12;
+          cy += (ty - cy) * 0.12;
+          var px = (cx * 6).toFixed(1), py = (cy * 4).toFixed(1);
+          pupils.forEach(function (p) { p.style.transform = "translate(" + px + "px," + py + "px)"; });
+          head.style.transform = "rotate(" + (cx * 2.5).toFixed(2) + "deg)";
+          requestAnimationFrame(loop);
+        })();
+      })();
     </script>
   </body>
 </html>
