@@ -956,8 +956,6 @@
         </div>
       </section>
     </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script>
       (function () {
         var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -1019,7 +1017,7 @@
           typeEl.textContent = words[0];
         }
 
-        /* ---- Scroll reveal (works with or without GSAP) ---- */
+        /* ---- Scroll reveal ---- */
         var revealEls = document.querySelectorAll(".reveal");
         var skillCols = document.querySelectorAll(".skill-col");
         function markIn(el) { el.classList.add("in"); }
@@ -1108,19 +1106,9 @@
           }
         }
 
-        /* ---- GSAP extras (progressive enhancement only) ---- */
-        if (window.gsap && window.ScrollTrigger && !reduceMotion) {
-          gsap.registerPlugin(ScrollTrigger);
-          gsap.from(".hero h1 .row > span", {
-            yPercent: 110, duration: 0.9, stagger: 0.12, ease: "power3.out", delay: 0.2
-          });
-          gsap.utils.toArray(".project, .mini").forEach(function (card) {
-            gsap.from(card, {
-              y: 40, opacity: 0, duration: 0.8, ease: "power2.out",
-              scrollTrigger: { trigger: card, start: "top 88%" }
-            });
-          });
-        }
+        /* ---- Scroll animations are handled by the reveal system above
+           (IntersectionObserver + CSS). No second animation layer: an extra
+           reveal pass previously forced the Work cards to stay invisible. ---- */
       })();
     </script>
     <script type="module">
