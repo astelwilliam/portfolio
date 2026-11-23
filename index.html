@@ -515,6 +515,17 @@
       .socials .copy { margin-left: auto; color: var(--faint); text-transform: none; letter-spacing: 0.02em; }
       @media (max-width: 620px) { .socials .copy { margin-left: 0; width: 100%; } }
 
+      /* ---------- Products ---------- */
+      .mini .price {
+        font-family: var(--font-mono); font-size: 22px; font-weight: 700;
+        color: var(--accent); margin-top: 14px; letter-spacing: 0.02em;
+      }
+      .mini .price small {
+        font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+        color: var(--faint); font-weight: 500;
+      }
+      .store-row { margin-top: 26px; }
+
       @media (prefers-reduced-motion: reduce) {
         *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
         html { scroll-behavior: auto; }
@@ -543,6 +554,7 @@
       <nav>
         <a href="#about">About</a>
         <a href="#work">Work</a>
+        <a href="#products">Products</a>
         <a href="#skills">Skills</a>
         <a href="#journey">Journey</a>
         <a class="hire" href="#contact">Hire Me</a>
@@ -849,11 +861,43 @@
         </div>
       </section>
 
+      <!-- Products -->
+      <section id="products">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <span class="no">/ 03</span>
+            <h2>Digital Products <span class="grad">I Built &amp; Sell</span></h2>
+            <span class="hint">Live on Whop — instant download</span>
+          </div>
+          <div class="mini-grid">
+            <article class="mini reveal">
+              <h4>AI Skills Pack</h4>
+              <p>7 plug-and-play AI skills for Claude, ChatGPT &amp; Codex.</p>
+              <div class="price">$19 <small>one-time</small></div>
+              <div class="p-links">
+                <a class="live" href="https://whop.com/astel-william-2a0e/" target="_blank" rel="noopener">View product →</a>
+              </div>
+            </article>
+            <article class="mini reveal d1">
+              <h4>AI Stream Clipping Pack</h4>
+              <p>Turn long streams into paid clips with an AI agent — the full step-by-step system.</p>
+              <div class="price">$19 <small>one-time</small></div>
+              <div class="p-links">
+                <a class="live" href="https://whop.com/astel-william-2a0e/" target="_blank" rel="noopener">View product →</a>
+              </div>
+            </article>
+          </div>
+          <div class="cta-row store-row reveal">
+            <a class="btn primary" href="https://whop.com/astel-william-2a0e/" target="_blank" rel="noopener">Visit my store →</a>
+          </div>
+        </div>
+      </section>
+
       <!-- Skills -->
       <section id="skills">
         <div class="wrap">
           <div class="sec-head reveal">
-            <span class="no">/ 03</span>
+            <span class="no">/ 04</span>
             <h2>Skills &amp; <span class="grad">Stack</span></h2>
             <span class="hint">What I reach for daily</span>
           </div>
@@ -908,7 +952,7 @@
       <section id="journey">
         <div class="wrap">
           <div class="sec-head reveal">
-            <span class="no">/ 04</span>
+            <span class="no">/ 05</span>
             <h2>The <span class="grad">Journey</span></h2>
             <span class="hint">Education · Work · Builds</span>
           </div>
@@ -962,7 +1006,7 @@
       <section id="contact" class="contact">
         <div class="wrap">
           <div class="sec-head reveal">
-            <span class="no">/ 05</span>
+            <span class="no">/ 06</span>
             <h2>Contact</h2>
             <span class="hint">Replies within a day</span>
           </div>
